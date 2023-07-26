@@ -1,0 +1,9 @@
+{
+  "APP_ENV": "development",
+  "SERVICE_NAME": "portal-service",
+  "LOG_FORMAT": "console",
+  "FRONT_PORT": "31001",
+  "BROKER_PORT": "8080",
+  "AUTHENTICATE_PORT": "8081",
+  "LOG_LEVEL": "DEBUG"
+}

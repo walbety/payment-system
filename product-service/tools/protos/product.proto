@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option java_package = "product";
+option go_package = "internal/channel/grpc/impl";
+
+service ProductService {
+  rpc listProductsByCategory(CategoryTypeRequest) returns (ProductList);
+}
+
+message ProductList {
+  repeated Product ProductList = 1;
+}
+
+message Product {
+  string Id = 1;
+  string Name = 2;
+  ProductSpecs Specs = 3;
+}
+
+message ProductSpecs {
+  string Model = 1;
+  CategoryType CategoryType = 2;
+  google.protobuf.Timestamp LaunchDate = 3;
+}
+
+message CategoryTypeRequest {
+  int32 CategoryType = 1;
+}
+
+enum CategoryType {
+  Unspecified= 0;
+  Consumable = 1;
+  Electrodomestics = 2;
+  Utilitaries = 3;
+}
